@@ -21,7 +21,8 @@ refs.stopBtn.addEventListener("click", onStop);
 function onStart() {
   console.log("Клик старт!");
   idInterval = setInterval(() => {
-    refs.body.style.backgroundColor = randomColor();
+    refs.body.style.backgroundColor =
+      colors[randomIntegerFromInterval(0, colors.length - 1)];
   }, 1000);
   refs.startBtn.disabled = true;
 }
@@ -30,7 +31,7 @@ function onStop() {
   clearInterval(idInterval);
   refs.startBtn.disabled = false;
 }
-function randomColor() {
-  return `rgb(${randomIntegerFromInterval(0, 255)}, 
-  ${randomIntegerFromInterval(0, 255)}, ${randomIntegerFromInterval(0, 255)})`;
-}
+// function randomColor() {
+//   return `rgb(${randomIntegerFromInterval(0, 255)},
+//   ${randomIntegerFromInterval(0, 255)}, ${randomIntegerFromInterval(0, 255)})`;
+// }
